@@ -59,7 +59,10 @@ class Map
     end
 
     def get(key)
-        
+        map.each do |p|
+            return p.last if p.first == key 
+        end
+        return nil 
     end
 
     def delete(key)
