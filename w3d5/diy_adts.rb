@@ -66,7 +66,11 @@ class Map
     end
 
     def delete(key)
-        
+        return nil if !self.get(key)
+        map.each.with_index do |p, i|
+            map.slice!(i) if p.first == key 
+        end
+        true 
     end
 
     def show
