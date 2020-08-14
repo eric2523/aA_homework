@@ -74,7 +74,7 @@ class Map
     end
 
     def show
-        
+        map
     end
 
 end
