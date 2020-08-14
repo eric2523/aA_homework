@@ -12,4 +12,9 @@ class Stack
     def pop
         stack.pop
     end
+
+    def peek
+        stack.first
+    end
 end
+
