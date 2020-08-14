@@ -3,7 +3,7 @@ Let's write a Stack class. To do this, use the following framework:
 
   class Stack
     def initialize
-      # create ivar to store stack here!
+      # create a var to store stack here!
     end
 
     def push(el)
