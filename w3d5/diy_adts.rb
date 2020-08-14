@@ -38,4 +38,36 @@ class Queue
     end
 end
 
+class Map
+    attr_reader :map
 
+    def initialize
+        @map = []
+    end
+
+    def set(key, value)
+        updated = false 
+        pair = [key, value]
+        map.each.with_index do |p, i|
+            if p.include?(key)
+                map[i] = pair 
+                updated = true
+            end
+        end
+        map.push(pair) if !updated
+        true
+    end
+
+    def get(key)
+        
+    end
+
+    def delete(key)
+        
+    end
+
+    def show
+        
+    end
+
+end
