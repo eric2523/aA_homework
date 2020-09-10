@@ -36,8 +36,14 @@ RSpec.describe User, type: :model do
     end
 
     describe "::find_by_credentials" do 
-      it "should accept an email and password as arguments" 
-      it "should return the user if user is found"
-      it "should return nil if user is not found"
+      let(:user2) {User.create(email: 'gooduser@aa.io', password: 'password123_valid')}
+
+      it "should return the user if user is found" do 
+        expect(User.find_by_credentials(user2.email, 'password123_valid')).to eq(user2)
+      end
+
+      it "should return nil if user is not found" do
+        expect(User.find_by_credentials("", "password123")).to be_nil
+      end
     end
 end
