@@ -26,6 +26,21 @@ Elephant.paradeHelper = function(elephant) {
     console.log(`${elephant.name} is trotting by!`)
 }
 
+function dinnerBreakfast() {
+    let order = "I'd like cheesy scrambled eggs please";
+    console.log(order)
+    return function (food) {
+        let beginning = order.slice(0, order.length - 8)
+        let end = order.slice(order.length - 8)
+        order = (`${beginning} and ${food}${end}`);
+        console.log(order);
+    }
+}
+
+// let bfastOrder = dinnerBreakfast() 
+// bfastOrder("chocolate chip pancakes")
+// bfastOrder("chocolate bip")
+
 // let ellie = new Elephant("Ellie", 185, ["giving human friends a ride", "playing hide and seek"]);
 // let charlie = new Elephant("Charlie", 200, ["painting pictures", "spraying water for a slip and slide"]);
 // let kate = new Elephant("Kate", 234, ["writing letters", "stealing peanuts"]);
