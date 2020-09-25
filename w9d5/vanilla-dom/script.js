@@ -17,16 +17,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // adding SF places as list items
-  document.getElementsByClassName("favorite-submit").forEach((submitBtn) => {
+  const submitCb = (e) => {
+    e.preventDefault();
+
+    const inputText = document.querySelector(".favorite-input")
+    let oldText = inputText.value 
+    inputText.value = "" 
+
+    const resList = document.getElementById("restaurants")
+    const li = document.createElement("li");
+
+    li.textContent = oldText;
+
+    resList.appendChild(li)
+  }
+
+  document.querySelectorAll(".favorite-submit").forEach((submitBtn) => {
     submitBtn.addEventListener("click", submitCb)
   })
 
-  const submitCb = (e) => {
-    e.preventDefault();
-    const inputText = document.querySelector(".favorite-input")
-    inputTexts.value = ""; 
-
-  }
   // --- your code here!
 
 
