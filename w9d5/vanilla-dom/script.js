@@ -44,9 +44,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const revealFormFunc = (e) => {
     e.preventDefault();
-    const hiddenDiv = document.querySelector(".photo-form-container")
-    hiddenDiv.classList.remove("hidden")
+    const hiddenDivClassList = document.querySelector(".photo-form-container").classList
+    if (hiddenDivClassList.contains("hidden")){
+      hiddenDivClassList.remove("hidden");
+    } else {
+      hiddenDivClassList.add("hidden")
+    }
   }
 
   photoShowBtn.addEventListener("click", revealFormFunc )
+
+  
 });
