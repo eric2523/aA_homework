@@ -54,5 +54,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   photoShowBtn.addEventListener("click", revealFormFunc )
 
-  
+  const addPhotoBtn = document.querySelector(".photo-url-submit")
+
+  const appendDogPhoto = (event) => {
+    event.preventDefault();
+    const photo = document.querySelector(".photo-url-input")
+
+    const dogPhotosList = document.querySelector(".dog-photos")
+
+    const newImg = document.createElement("img")
+    newImg.src = photo.value
+    photo.value = "";
+    const newPhotoLi = document.createElement("li")
+    newPhotoLi.append(newImg)
+
+    dogPhotosList.appendChild(newPhotoLi)
+  }
+
+  addPhotoBtn.addEventListener("click", appendDogPhoto)
 });
