@@ -14,37 +14,39 @@ document.addEventListener("DOMContentLoaded", () => {
     li.addEventListener("click", toggleLi);
   });
 
-
-
   // adding SF places as list items
+  // --- your code here!
   const submitCb = (e) => {
     e.preventDefault();
 
-    const inputText = document.querySelector(".favorite-input")
-    let oldText = inputText.value 
-    inputText.value = "" 
+    const inputText = document.querySelector(".favorite-input");
+    let oldText = inputText.value;
+    inputText.value = "";
 
-    const resList = document.getElementById("restaurants")
+    const resList = document.getElementById("restaurants");
     const li = document.createElement("li");
 
     li.textContent = oldText;
 
-    resList.appendChild(li)
-  }
+    resList.appendChild(li);
+  };
 
   document.querySelectorAll(".favorite-submit").forEach((submitBtn) => {
-    submitBtn.addEventListener("click", submitCb)
-  })
+    submitBtn.addEventListener("click", submitCb);
+  });
 
-  // --- your code here!
-
-
-
+  
 
   // adding new photos
 
   // --- your code here!
+  const photoShowBtn = document.querySelector(".photo-show-button")
 
+  const revealFormFunc = (e) => {
+    e.preventDefault();
+    const hiddenDiv = document.querySelector(".photo-form-container")
+    hiddenDiv.classList.remove("hidden")
+  }
 
-
+  photoShowBtn.addEventListener("click", revealFormFunc )
 });
