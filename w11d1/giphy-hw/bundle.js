@@ -111,7 +111,7 @@ var receiveSearchGiphys = function receiveSearchGiphys(giphys) {
 };
 var fetchSearchGiphys = function fetchSearchGiphys(searchTerm) {
   return function (dispatch) {
-    _util_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchSearchGiphys"](searchTerm).then(function (giphys) {
+    return _util_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchSearchGiphys"](searchTerm).then(function (giphys) {
       return dispatch(receiveSearchGiphys(giphys.data));
     });
   };
@@ -217,8 +217,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./components/root.jsx");
-/* harmony import */ var _util_api_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util/api_util */ "./util/api_util.js");
-/* harmony import */ var _actions_giphy_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./actions/giphy_actions */ "./actions/giphy_actions.js");
+/* harmony import */ var _actions_giphy_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/giphy_actions */ "./actions/giphy_actions.js");
 
 
 
@@ -229,9 +228,9 @@ document.addEventListener("DOMContentLoaded", function () {
   var root = document.getElementById("root");
   var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])(); //testing
 
-  window.fetchSearchGiphys = _util_api_util__WEBPACK_IMPORTED_MODULE_4__["fetchSearchGiphys"];
+  window.fetchSearchGiphys = _actions_giphy_actions__WEBPACK_IMPORTED_MODULE_4__["fetchSearchGiphys"];
   window.store = store;
-  window.receiveSearchGiphys = _actions_giphy_actions__WEBPACK_IMPORTED_MODULE_5__["receiveSearchGiphys"];
+  window.receiveSearchGiphys = _actions_giphy_actions__WEBPACK_IMPORTED_MODULE_4__["receiveSearchGiphys"];
 });
 
 /***/ }),
